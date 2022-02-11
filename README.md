@@ -2,7 +2,7 @@
 
 Öncelikle biz VetDjango adında bir django projesi başlatmalıyız.
 
-Konsolumuza ***django-admin startproject VetDjango*** yazıyoruz.Aardından ise bir adet app oluşturmalıyız.
+Konsolumuza ***django-admin startproject VetDjango*** yazıyoruz.Ardından ise bir adet app oluşturmalıyız.
 
 Konsolumuzu tekrardan açıp ***py manage.py startapp vetproje*** yazıyoruz.
 
