@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+
+    <div class="container my-4">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="fas fa-times"></i> Hata!</h4>
+                        {{ message }}
+                    </div>
+                {% elif message.tags == "info" %}
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="fas fa-info-circle"></i> Bilgilendirme!</h4>
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="icon fa fa-check"></i> Başarılı!</h4>
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row" style="margin-top: 50px">
+                <div class="col-lg-6 col-6">
+                    <div class="alert alert-default-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h3 style="color: black"><i class="fas fa-paw"></i> {{ hayvan_tur }}</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-6">
+                    <div class="alert alert-default-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h3 style="color: black"><i class="fas fa-dog "></i> {{ hayvan_cins }}</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-6">
+                    <div class="alert alert-default-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h3 style="color:black;;"><i class="fas fa-id-card"></i> {{ hayvan_isim }} </h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-6">
+                    <div class="alert alert-light alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h3 style="color: black"><i class="fas fa-clock"></i>
+                            {{ hayvan_yas }} Yaşında
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-6">
+                    <div class="alert alert-default-warning alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h3 style="color: black"><i class="fas fa-paragraph"></i>
+                            {{ hayvan_aciklama }}
+                        </h3>
+                    </div>
+                </div>
+                {% if data_sorgu %}
+                    <div class="col-lg-6 col-6">
+                        <div class="alert alert-default-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h3 style="color: black"><i class="fas fa-address-book"></i>
+                                {{ hayvan_isim }} isimli {{ hayvan_cins }} Şuanda sahipli
+                            </h3>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="col-lg-6 col-6">
+                        <div class="alert alert-default-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h3 style="color: black"><i class="fas fa-paragraph"></i>
+                                {{ hayvan_isim }} isimli {{ hayvan_cins }} şuanda bir sahibi yok.
+                            </h3>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

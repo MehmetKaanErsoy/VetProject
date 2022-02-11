@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+
+    <div class="row m-auto">
+        <div class="col-lg-3 col-6" style="margin-top: 70px;margin-left: 100px">
+            <!-- small box -->
+            <div class="small-box bg-gradient-gray-dark" style="height: 170px">
+                <div class="inner">
+                    <h3 style="font-size: 50px">{{ data_hayvan|length }}</h3>
+
+                    <p style="font-size: 20px;margin-top: -13px">Toplam Hayvan</p>
+                    <p style="font-size: 20px;margin-top: -20px">Sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <a href="{% url 'hayvanlistele' %}" style="margin-top: -15px" class="small-box-footer">Daha fazla bilgi al
+                    <i
+                            class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6" style="margin-top: 70px">
+            <!-- small box -->
+            <div class="small-box bg-gradient-blue" style="height: 170px">
+                <div class="inner">
+                    <h3 style="font-size: 50px">{{ data_musteri|length }}</h3>
+                    <p style="font-size: 20px;margin-top: -13px">Toplam Müşteri</p>
+                    <p style="font-size: 20px;margin-top: -20px">Sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <a href="{% url 'musterilistele' %}" style="margin-top: -15px" class="small-box-footer">Daha falza bilgi al
+                    <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6" style="margin-top: 70px">
+            <!-- small box -->
+            <div class="small-box bg-gradient-orange" style="height: 170px">
+                <div class="inner">
+                    <h3 style="font-size: 50px;color: white">{{ data_sahipli|length }}</h3>
+                    <p style="font-size: 20px;margin-top: -13px;color: white">Sahiplenilen</p>
+                    <p style="font-size: 20px;margin-top: -20px;color:white;">Hayvan Sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-dog"></i>
+                </div>
+                <a href="{% url 'atamaliste' %}" style="margin-top: -15px" class="small-box-footer">Daha fazla bilgi
+                    al
+                    <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

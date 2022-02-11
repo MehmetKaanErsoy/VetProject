@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+
+    <div class="jumbotron border shadow" style="height: 100px">
+        <div class="row">
+            <div class="col-md-8 offset-2" style="margin-top: -15px">
+                <form action="{% url 'hayvanlistele' %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="q" type="text" placeholder="Arama Yap......"
+                               class="form-control form-control-lg">
+                        <div class="input-group-append">
+                            <button class="btn btn-dar btn-lg">Ara</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body table-responsive p-0" style="margin-top: 30px;">
+        <table class="table table-hover text-nowrap">
+            <thead>
+            <tr>
+                <th>Cinsi</th>
+                <th>İsmi</th>
+                <th>İncele</th>
+                <th>Güncelle</th>
+                <th style="padding-left: 10px">Sil</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in data %}
+                <tr>
+                    <td>{{ i.hayvan_cins }}</td>
+                    <td>{{ i.hayvan_isim }}</td>
+                    <td><a href="/hayvanincele/{{ i.id }}" class="btn btn-primary">İncele</a></td>
+                    <td><a href="/hayvanguncelle/{{ i.id }}" class="btn btn-dark">Güncelle</a></td>
+                    <td><a onclick="return confirm('Silmek İstediğinize Eminmisiniz?')" href="/hayvansil/{{ i.id }}"
+                               class="btn btn-danger" style="width: 80px">Sil</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
