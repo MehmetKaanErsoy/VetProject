@@ -9,7 +9,11 @@ Konsolumuzu tekrardan açıp ***py manage.py startapp vetproje*** yazıyoruz.
 > Bu kısımda ise github'ımda yer alan dosyaları indirip gerekli olan yerlere tek tek kopyala yapıştır yapıyoruz. Örneğin sizde oluşan VetDjango klasöründeki urls.py harici çoğu şey
 sizdekinde sabit kalmalı sadece url.py dosyası oraya eklenmelidir.
 
+### ***Dosya dosya kopyalama işlemi yapmalıyız***
+
+
 ## Setting Kısmı Düzenleme
+
 
 Öncelikle Installed_Apps yerine vetprojeyi yani oluşturduğumuz app dosyasını eklemeyi unutmuyoruz.
 
